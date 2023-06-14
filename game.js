@@ -1,32 +1,32 @@
-var Snake = (function () {
+let Snake = (function () {
 
   const INITIAL_TAIL = 4;
-  var fixedTail = true;
+  let fixedTail = true;
 
-  var intervalID;
+  let intervalID;
 
-  var tileCount = 30;
-  var gridSize = 400/tileCount;
+  let tileCount = 30;
+  let gridSize = 400/tileCount;
 
   const INITIAL_PLAYER = { x: Math.floor(tileCount / 2), y: Math.floor(tileCount / 2) };
 
-  var velocity = { x:0, y:0 };
-  var player = { x: INITIAL_PLAYER.x, y: INITIAL_PLAYER.y };
+  let velocity = { x:0, y:0 };
+  let player = { x: INITIAL_PLAYER.x, y: INITIAL_PLAYER.y };
 
-  var walls = false;
+  let walls = false;
 
-  var fruit = { x:1, y:1 };
+  let fruit = { x:1, y:1 };
 
-  var trail = [];
-  var tail = INITIAL_TAIL;
+  let trail = [];
+  let tail = INITIAL_TAIL;
 
-  var reward = 0;
-  var points = 0;
-  var pointsMax = 0;
+  let reward = 0;
+  let points = 0;
+  let pointsMax = 0;
 
-  var ActionEnum = { 'none':0, 'up':1, 'down':2, 'left':3, 'right':4 };
+  let ActionEnum = { 'none':0, 'up':1, 'down':2, 'left':3, 'right':4 };
   Object.freeze(ActionEnum);
-  var lastAction = ActionEnum.none;
+  let lastAction = ActionEnum.none;
 
   function setup () {
     canv = document.getElementById('gc');
@@ -35,7 +35,7 @@ var Snake = (function () {
     game.reset();
   }
 
-  var game = {
+  let game = {
 
     reset: function () {
       ctx.fillStyle = 'grey';
