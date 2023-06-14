@@ -54,7 +54,7 @@ let Snake = (function () {
 
       trail = [];
       trail.push({ x: player.x, y: player.y });
-      // for(var i=0; i<tail; i++) trail.push({ x: player.x, y: player.y });
+      // for(let i=0; i<tail; i++) trail.push({ x: player.x, y: player.y });
     },
 
     action: {
@@ -124,7 +124,7 @@ let Snake = (function () {
         ctx.fillRect(0, canv.height-gridSize+1,canv.width,gridSize);
       }
 
-      var stopped = velocity.x == 0 && velocity.y == 0;
+      let stopped = velocity.x == 0 && velocity.y == 0;
 
       player.x += velocity.x;
       player.y += velocity.y;
@@ -155,7 +155,7 @@ let Snake = (function () {
       }
 
       ctx.fillStyle = 'green';
-      for(var i=0; i<trail.length-1; i++) {
+      for(let i=0; i<trail.length-1; i++) {
         ctx.fillRect(trail[i].x * gridSize+1, trail[i].y * gridSize+1, gridSize-2, gridSize-2);
 
         // console.debug(i + ' => player:' + player.x, player.y + ', trail:' + trail[i].x, trail[i].y);
