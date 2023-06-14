@@ -174,7 +174,7 @@ let Snake = (function () {
         game.RandomFruit();
         // make sure new fruit didn't spawn in snake tail
         while((function () {
-          for(var i=0; i<trail.length; i++) {
+          for(let i=0; i<trail.length; i++) {
             if (trail[i].x == fruit.x && trail[i].y == fruit.y) {
               game.RandomFruit();
               return true;
